@@ -303,8 +303,7 @@ _Bool parse_data(const char* data,unsigned int length,const char* fmt,...){
 							}
 							unsigned int string_length=0;
 							if (!first_number){
-								fmt++;
-								char end_char=*fmt;
+								char end_char=fmt[1];
 								if (!end_char){
 									string_length=length;
 								}
