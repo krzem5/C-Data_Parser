@@ -20,4 +20,5 @@
 - `h`
 - `hh`
 - `l`, `ll`
-- `{number}[,{number}]`
+- `{min}[,{max}]`
+- `{length}`
