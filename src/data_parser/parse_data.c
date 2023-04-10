@@ -160,7 +160,13 @@ _Bool parse_data(const char* data,unsigned int length,const char* fmt,...){
 								number=-number;
 							}
 							signed long long int first_number_sgn=first_number;
+							if (!(flags&FLAG_HAS_FIRST_NUMBER)){
+								first_number_sgn=-0x8000000000000000ll;
+							}
 							signed long long int second_number_sgn=second_number;
+							if (!(flags&FLAG_HAS_SECOND_NUMBER)){
+								second_number_sgn=0x7fffffffffffffffll;
+							}
 							if (number<first_number_sgn){
 								number=first_number_sgn;
 							}
@@ -302,7 +308,7 @@ _Bool parse_data(const char* data,unsigned int length,const char* fmt,...){
 								goto _cleanup;
 							}
 							unsigned int string_length=0;
-							if (!first_number){
+							if (!(flags&FLAG_HAS_FIRST_NUMBER)){
 								char end_char=fmt[1];
 								if (!end_char){
 									string_length=length;

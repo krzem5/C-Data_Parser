@@ -12,6 +12,5 @@ int main(int argc,const char*const* argv){
 		c[d]=0;
 		printf("[%d], [%f], [%s]\n",a,b,c);
 	}
-	printf("Q\n");
 	return 0;
 }
